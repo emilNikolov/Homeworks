@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BinInHex6
+{
+    class Program
+    {
+        static string HexDecimal(string str)
+        {
+            StringBuilder res = new StringBuilder();
+            for (int i = 0; i < str.Length; i += 4)
+            {
+                switch (str.Substring(i, 4))
+                {
+                    case "0000":
+                        res.Append("0");
+                        break;
+                    case "0001":
+                        res.Append("1");
+                        break;
+                    case "0010":
+                        res.Append("2");
+                        break;
+                    case "0011":
+                        res.Append("3");
+                        break;
+                    case "0100":
+                        res.Append("4");
+                        break;
+                    case "0101":
+                        res.Append("5");
+                        break;
+                    case "0110":
+                        res.Append("6");
+                        break;
+                    case "0111":
+                        res.Append("7");
+                        break;
+                    case "1000":
+                        res.Append("8");
+                        break;
+                    case "1001":
+                        res.Append("9");
+                        break;
+                    case "1010":
+                        res.Append("A");
+                        break;
+                    case "1011":
+                        res.Append("B");
+                        break;
+                    case "1100":
+                        res.Append("C");
+                        break;
+                    case "1101":
+                        res.Append("D");
+                        break;
+                    case "1110":
+                        res.Append("E");
+                        break;
+                    case "1111":
+                        res.Append("F");
+                        break;
+                    default: res.Append("");
+                        break;
+                }
+
+            }
+            return res.ToString();
+        }
+
+        static void Main(string[] args)
+        {
+            Console.Write("Give me some binary value: ");
+            string str = Console.ReadLine();
+
+            Console.WriteLine(HexDecimal(str));
+           
+        }
+    }
+}
