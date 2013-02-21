@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BinToDec2
+{
+    class Program
+    {
+        static int Extract(string str, int i)
+        {
+            return str[i] - '0';
+        }
+
+        static int BinToDecimal(string bin)
+        {
+            int dec = 0;
+
+            for (int i = bin.Length - 1, j = 1; i >= 0; i--, j *= 2)
+                dec += Extract(bin, i) * j;
+
+            return dec;    
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(BinToDecimal("11110000"));
+        }
+    }
+}
